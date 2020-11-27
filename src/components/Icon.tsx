@@ -38,6 +38,7 @@ import {
 
 import {
   faTwitter,
+  faTelegram,
   faGithub,
 } from '@fortawesome/free-brands-svg-icons'
 
@@ -46,6 +47,7 @@ config.autoAddCss = false
 const ICONS: Record<string, [string, string, IconDefinition]> = {
   plus: ['fas', 'plus', faPlus],
   twitter: ['fab', 'twitter', faTwitter],
+  telegram: ['fab', 'telegram', faTelegram],
   github: ['fab', 'github', faGithub],
   web: ['fas', 'globe-africa', faGlobeAfrica],
   copy: ['fas', 'copy', faCopy ],
