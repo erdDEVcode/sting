@@ -15,7 +15,9 @@ export const useRates = (): UseRatesResult => {
   useEffect(() => {
     const timer = doInterval(async () => {
       try {
-        setRates(await rateApi.getRates('usd'))
+        const r = await rateApi.getRates('usd')
+        console.log(r)
+        setRates(r)
       } catch (err) {
         console.error(`Error fetching rates: ${err.message}`)
         // TODO: show error to user

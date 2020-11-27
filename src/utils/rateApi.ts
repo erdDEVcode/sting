@@ -24,7 +24,7 @@ class RateApi extends Api {
   }
 
   async getRates(currency: string): Promise<Rates> {
-    const { rateApiName: currencyId } = data.getToken(currency)
+    const { rateApiName: currencyId, decimals: multiplier } = data.getToken(currency)
 
     const qry = qs.stringify({
       ids: this._rateApiNames.join(','),
@@ -34,13 +34,19 @@ class RateApi extends Api {
     const calldata = await this._call(`/simple/price?${qry}`)
 
     return this._tokenIds.reduce((m, id) => {
-      let value = parseFloat(_.get(calldata, `${data.getToken(id).rateApiName}.${currencyId}`))
+      const r = data.getToken(id).rateApiName
 
-      ;(m as Rates)[id] = {
+      let value = parseFloat(_.get(calldata, `${r}.${currencyId}`))
+      if (multiplier) {
+        value = parseInt(`${value * Math.pow(10, multiplier)}`, 10)
+      }
+
+      ; (m as Rates)[id] = {
         token: id,
         currency,
-        value: `${value}`,
+        value: Number.isNaN(value) ? value : `${value}`,
       }
+
       return m
     }, {})
   }
