@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/erdDEVcode/sting/compare/v2.1.0...v2.1.1) (2020-11-27)
+
+
+### Bug Fixes
+
+* missing telegram icon ([035e3bb](https://github.com/erdDEVcode/sting/commit/035e3bb87ef1c45ea6d512046684312876b36391))
+
 # [2.1.0](https://github.com/erdDEVcode/sting/compare/v2.0.3...v2.1.0) (2020-11-27)
 
 
