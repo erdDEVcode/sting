@@ -2,7 +2,7 @@
   "name": "sting",
   "version": "2.0.0",
   "private": true,
-  "devDependences": {
+  "devDependencies": {
     "@types/lodash.get": "^4.4.6",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
@@ -67,10 +67,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/lodash.get": "^4.4.6",
-    "@types/react-modal": "^3.10.6",
-    "husky": "^4.3.0"
   }
 }
