@@ -15,8 +15,9 @@
     "@types/react-modal": "^3.10.6",
     "@types/react-toast-notifications": "^2.4.0",
     "husky": "^4.3.0",
+    "react-scripts": "^4.0.1",
     "semantic-release": "^17.2.2",
-    "typescript": "^4.0.3"
+    "typescript": "^4.1.2"
   },
   "dependencies": {
     "@emotion/styled": "^10.0.27",
@@ -38,7 +39,6 @@
     "react-modal": "^3.11.2",
     "react-odometerjs": "^2.1.1",
     "react-qr-svg": "^2.3.0",
-    "react-scripts": "4.0.0",
     "react-transaction-toasts": "^1.2.0",
     "remark-parse": "^9.0.0",
     "remark-react": "^8.0.0",
@@ -48,7 +48,7 @@
   },
   "scripts": {
     "start": "BROWSER=none react-scripts start",
-    "dev": "yarn start",
+    "dev": "npm run start",
     "build": "react-scripts build",
     "release": "semantic-release"
   },
@@ -61,7 +61,7 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },  
+  },
   "browserslist": {
     "production": [
       ">0.2%",

@@ -24,7 +24,7 @@ const bgColor = gunMetal
 const textColor = white//primary1
 const lightYellow = new Color(middleYellow).lighten(0.6).toString()
 
-export default (): any => ({
+const theme = (): any => ({
   layout: {
     bgColor,
     textColor,
@@ -298,3 +298,5 @@ export default (): any => ({
     textColor: white,
   }
 })
+
+export default theme

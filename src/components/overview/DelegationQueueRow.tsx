@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Contract, ContractQueryResultDataType, parseQueryResult } from 'elrondjs' 
 import styled from '@emotion/styled'
 

@@ -5,7 +5,6 @@ import { flex, boxShadow } from 'emotion-styled-utils'
 import Address from './Address'
 import { GlobalConsumer, GlobalContextValue } from '../contexts'
 import Icon from './Icon'
-import Button from './Button'
 import CopyToClipboardButton from './CopyToClipboardButton'
 import HeaderClickable from './HeaderClickable'
 
@@ -89,11 +88,6 @@ const ItemAddress = styled(Address)`
   margin-right: 1rem;
 `
 
-
-const AddWalletButton = styled(Button)`
-  padding: 0.4em 0.8em;
-  font-size: 80%;
-`
 
 interface Props {
   className?: string,
