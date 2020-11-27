@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="250" height="250" src="https://raw.githubusercontent.com/erdDEVcode/sting/assets/logo.png">
+  <img width="250" height="250" src="https://raw.githubusercontent.com/erdDEVcode/sting/master/assets/logo.png">
 </p>
 
 # Sting
