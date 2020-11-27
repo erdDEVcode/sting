@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/erdDEVcode/sting/compare/v2.0.0...v2.0.1) (2020-11-27)
+
+
+### Bug Fixes
+
+* typescript warnings ([f7a17f6](https://github.com/erdDEVcode/sting/commit/f7a17f6a6d867877fd1becd0dcd3d585146c82e4))
+
 # [2.0.0](https://github.com/erdDEVcode/sting/compare/v1.0.3...v2.0.0) (2020-11-27)
 
 
