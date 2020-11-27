@@ -92,8 +92,8 @@ const AboutModal: React.FunctionComponent<Props> = ({ isOpen, onRequestClose }) 
     openExternalUrl(getReleasePageUrl(version))
   }, [])
 
-  const openWebsite = useCallback(() => {
-    openExternalUrl('https://sting.erd.dev')
+  const openTelegram = useCallback(() => {
+    openExternalUrl('https://t.me/erdDEV')
   }, [])
 
   const openTwitter = useCallback(() => {
@@ -115,7 +115,7 @@ const AboutModal: React.FunctionComponent<Props> = ({ isOpen, onRequestClose }) 
             <Button onClick={viewReleaseNotes}>View release notes</Button>
             <FindUs>Find us:</FindUs>
             <SocialButtons>
-              <Button icon='web' onClick={openWebsite}>Website</Button>
+              <Button icon='telegram' onClick={openTelegram}>Telegram</Button>
               <Button icon='twitter' onClick={openTwitter}>Twitter</Button>
               <Button icon='github' onClick={openGithub}>Github</Button>
             </SocialButtons>
