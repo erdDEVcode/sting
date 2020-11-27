@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/erdDEVcode/sting/compare/v2.0.1...v2.0.2) (2020-11-27)
+
+
+### Bug Fixes
+
+* rate calculations ([4a73955](https://github.com/erdDEVcode/sting/commit/4a73955faee3b2598dd6404f64a23315e528f58a))
+
 ## [2.0.1](https://github.com/erdDEVcode/sting/compare/v2.0.0...v2.0.1) (2020-11-27)
 
 
