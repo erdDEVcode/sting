@@ -16,7 +16,6 @@ export const useRates = (): UseRatesResult => {
     const timer = doInterval(async () => {
       try {
         const r = await rateApi.getRates('usd')
-        console.log(r)
         setRates(r)
       } catch (err) {
         console.error(`Error fetching rates: ${err.message}`)
