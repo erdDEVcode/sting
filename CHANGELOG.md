@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/erdDEVcode/sting/compare/v2.0.3...v2.1.0) (2020-11-27)
+
+
+### Bug Fixes
+
+* logo path ([0945ee0](https://github.com/erdDEVcode/sting/commit/0945ee03d6e0a14ce217d2b60bd2ac567a5b8eb9))
+
+
+### Features
+
+* add telegram link ([de889be](https://github.com/erdDEVcode/sting/commit/de889beb1d499039fa2d9ace789d777885e155bc))
+
 ## [2.0.3](https://github.com/erdDEVcode/sting/compare/v2.0.2...v2.0.3) (2020-11-27)
 
 ## [2.0.2](https://github.com/erdDEVcode/sting/compare/v2.0.1...v2.0.2) (2020-11-27)
