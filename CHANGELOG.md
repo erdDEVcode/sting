@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/erdDEVcode/sting/compare/v1.0.3...v2.0.0) (2020-11-27)
+
+
+### Build System
+
+* try breaking change again ([92752fc](https://github.com/erdDEVcode/sting/commit/92752fca143fe192658ba581e94f66f4a1f96ac1))
+
+
+### BREAKING CHANGES
+
+* 2.0
+
 ## [1.0.3](https://github.com/erdDEVcode/sting/compare/v1.0.2...v1.0.3) (2020-11-27)
 
 ## [1.0.2](https://github.com/erdDEVcode/sting/compare/v1.0.1...v1.0.2) (2020-11-27)
