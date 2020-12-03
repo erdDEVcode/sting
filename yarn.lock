@@ -5795,10 +5795,10 @@ elrondjs@^1.4.1:
     axios "^0.21.0"
     buffer "^6.0.2"
 
-elrondjs@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/elrondjs/-/elrondjs-1.7.0.tgz#13831c5fe7aee021225cc2cc4352f58ece0ec190"
-  integrity sha512-6eNa2rcE4CQC2VSoTjXoK+AiiNB2e1foH4Jc+H6z9xMx3tDuKwcumDF1pWNhbQuYcVd/teQtshQJyWXnqfkiow==
+elrondjs@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/elrondjs/-/elrondjs-1.8.0.tgz#caa298213604e95afb5c15e7887961825285e570"
+  integrity sha512-DlpHceBmqmTzaeM4iIK/dE1ft3k8ukFLbejV1FVJOZn0+KkOsis3wUjpndPAAH1/9uFB6tmih/NWznVkJzbnLg==
   dependencies:
     "@elrondnetwork/elrond-core-js" "^1.28.0"
     "@elrondnetwork/hw-app-elrond" "^0.1.17"
