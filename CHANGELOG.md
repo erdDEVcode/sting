@@ -1,3 +1,5 @@
+# [2.2.0](https://github.com/erdDEVcode/sting/compare/v2.1.4...v2.2.0) (2020-12-15)
+
 ## [2.1.4](https://github.com/erdDEVcode/sting/compare/v2.1.3...v2.1.4) (2020-12-07)
 
 ## [2.1.3](https://github.com/erdDEVcode/sting/compare/v2.1.2...v2.1.3) (2020-12-03)
