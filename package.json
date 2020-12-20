@@ -1,6 +1,6 @@
 {
   "name": "sting",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "private": true,
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",

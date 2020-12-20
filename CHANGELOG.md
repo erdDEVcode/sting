@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/erdDEVcode/sting/compare/v2.2.1...v2.3.0) (2020-12-20)
+
+
+### Features
+
+* transaction sending ([824207e](https://github.com/erdDEVcode/sting/commit/824207e5744222a8754973475b99455677941ee0))
+
 ## [2.2.1](https://github.com/erdDEVcode/sting/compare/v2.2.0...v2.2.1) (2020-12-17)
 
 # [2.2.0](https://github.com/erdDEVcode/sting/compare/v2.1.4...v2.2.0) (2020-12-15)
