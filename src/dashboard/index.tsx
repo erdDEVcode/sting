@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import styled from '@emotion/styled'
 import { flex, boxShadow } from 'emotion-styled-utils'
+import { useTransactionToasts } from 'react-transaction-toasts'
 
 import { t } from '../strings'
-import { GlobalConsumer } from '../contexts'
+import { ChainConsumer, GlobalConsumer } from '../contexts'
 import { DASHBOARD_MENU } from '../constants/app'
 import Overview from '../components/overview/Overview'
 import Icon from '../components/Icon'
+import { Network, Provider, Wallet } from '../types/all'
 
 const Container = styled.div`
   ${flex({ direction: 'row', justify: 'flex-end', align: 'stretch' })};
@@ -67,6 +69,9 @@ const Content = styled.div`
 interface SideMenuProps {
   experimentalFeaturesEnabled: boolean,
   activePanel: string,
+  wallet: Wallet,
+  network?: Network,
+  provider: Provider,
   setActivePanel: (panel: string) => void,
 }
 
@@ -81,22 +86,48 @@ const ICONS: Record<string, string> = {
 const SideMenu: React.FunctionComponent<SideMenuProps> = ({ 
   experimentalFeaturesEnabled,
   activePanel, 
+  wallet,
+  network,
+  provider,
   setActivePanel 
 }) => {
+  const { showError } = useTransactionToasts({ disableAutoCloseOnSuccess: true })
+
+  const selectItem = useCallback(async id => {
+    if (id === 'SEND') {
+      if (!network || network.failure) {
+        showError(`Network not connected ${network?.failure ? `(${network.failure})` : ''}`)
+        return
+      }
+
+      const signer = window.erdbox.getSigner()
+
+      const signedTransaction = await signer.signTransaction({
+        sender: wallet.address(),
+        receiver: '',
+        value: '0'
+      })
+
+      await provider.sendSignedTransaction(signedTransaction)
+    } else {
+      setActivePanel(id)
+    }
+  }, [network, wallet, provider, showError, setActivePanel])
+
   return (
     <SideMenuContainer>
-      {Object.values(DASHBOARD_MENU).reduce((m: any[], { id, experimental }) => {
+      {Object.values(DASHBOARD_MENU).reduce((m: any[], cfg) => {
+        const { id, experimental = false } = (cfg as any)
+
         if (!experimental || experimentalFeaturesEnabled) {
           m.push(
             <SideMenuItem
               key={id}
               active={activePanel === id}
-              onClick={() => setActivePanel(id)}
+              onClick={() => selectItem(id)}
             >
               <MenuIcon name={ICONS[id]} />
-              {(activePanel === id) ? (
-                <MenuName>{t(`dashboard.menu.${id.toLowerCase()}`)}</MenuName>
-              ) : null}
+              <MenuName>{t(`dashboard.menu.${id.toLowerCase()}`)}</MenuName>
             </SideMenuItem>
           )
         }
@@ -110,20 +141,29 @@ const SideMenu: React.FunctionComponent<SideMenuProps> = ({
 const Dashboard = () => {
   const [activePanel, setActivePanel] = useState<string>(DASHBOARD_MENU[0].id)
 
+
+
   return (
     <GlobalConsumer>
-      {({ activeWallet, experimentalFeaturesEnabled }) => (
+      {({ network, activeWallet, experimentalFeaturesEnabled }) => (
         activeWallet ? (
-          <Container>
-            <SideMenu
-              activePanel={activePanel}
-              setActivePanel={setActivePanel}
-              experimentalFeaturesEnabled={experimentalFeaturesEnabled}
-            />
-            <Content>
-              <Overview isActive={activePanel === 'OVERVIEW'} />
-            </Content>
-          </Container>
+          <ChainConsumer>
+            {(provider: Provider) => (
+              <Container>
+                <SideMenu
+                  wallet={activeWallet}
+                  network={network}
+                  provider={provider}
+                  activePanel={activePanel}
+                  setActivePanel={setActivePanel}
+                  experimentalFeaturesEnabled={experimentalFeaturesEnabled}
+                />
+                <Content>
+                  <Overview isActive={activePanel === 'OVERVIEW'} />
+                </Content>
+              </Container>
+            )}
+          </ChainConsumer>
         ) : null
       )}
     </GlobalConsumer>
