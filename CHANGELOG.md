@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/erdDEVcode/sting/compare/v2.3.0...v2.4.0) (2020-12-21)
+
+
+### Features
+
+* allow for switching wallets ([5313e90](https://github.com/erdDEVcode/sting/commit/5313e9017212750fd0396f14775c546768c351e5))
+
 # [2.3.0](https://github.com/erdDEVcode/sting/compare/v2.2.1...v2.3.0) (2020-12-20)
 
 
