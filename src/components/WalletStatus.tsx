@@ -7,6 +7,7 @@ import { GlobalConsumer, GlobalContextValue } from '../contexts'
 import Icon from './Icon'
 import CopyToClipboardButton from './CopyToClipboardButton'
 import HeaderClickable from './HeaderClickable'
+import Button from './Button'
 
 const Container = styled.div`
   position: relative;
@@ -88,6 +89,12 @@ const ItemAddress = styled(Address)`
   margin-right: 1rem;
 `
 
+const ChangeWalletButton = styled(Button)`
+  font-size: 0.8rem;
+  margin: 0 auto;
+`
+
+
 
 interface Props {
   className?: string,
@@ -100,15 +107,9 @@ const WalletStatus: React.FunctionComponent<Props> = ({ className }) => {
     setShowMenu(!showMenu)
   }, [ showMenu ])
 
-
-  const switchToWallet = useCallback((setActiveWallet: Function, a: any) => {
-    setActiveWallet(a)
-    setTimeout(toggleWalletMenu, 100)
-  }, [ toggleWalletMenu ])
-
   return (
     <GlobalConsumer>
-      {({ wallets, activeWallet, setActiveWallet }: GlobalContextValue) => (
+      {({ activeWallet, changeWallet }: GlobalContextValue) => (
         activeWallet ? (
           <Container className={className}>
             <TextSpan onClick={toggleWalletMenu}>
@@ -120,15 +121,21 @@ const WalletStatus: React.FunctionComponent<Props> = ({ className }) => {
               <React.Fragment>
                 <Overlay onClick={toggleWalletMenu} />
                 <Menu>
-                  {wallets.map(a => (
+                  {[ activeWallet ].map(a => (
                     <MenuItem
                       key={a.address()}
                       active={a.address() === activeWallet.address()}
                     >
-                      <ItemAddress address={a.address()} onClick={() => switchToWallet(setActiveWallet, a)} />
+                      <ItemAddress address={a.address()} />
                       <StyledCopyToClipboardButton value={a.address()} />
                     </MenuItem>
                   ))}
+                  <MenuItem key='change-button'>
+                    <ChangeWalletButton onClick={() => {
+                      toggleWalletMenu()
+                      changeWallet()
+                    }} icon='change'>Change wallet</ChangeWalletButton>
+                  </MenuItem>
                 </Menu>
               </React.Fragment>
             ) : null}

@@ -14,6 +14,7 @@ import {
   faArrowCircleDown,
   faArrowCircleUp,
   faDollarSign,
+  faCoins,
   faInfoCircle,
   faCode,
   faSync,
@@ -34,6 +35,7 @@ import {
   faTools,
   faTimes,
   faCheck,
+  faExchangeAlt,
 } from '@fortawesome/free-solid-svg-icons'
 
 import {
@@ -53,8 +55,10 @@ const ICONS: Record<string, [string, string, IconDefinition]> = {
   copy: ['fas', 'copy', faCopy ],
   config: ['fas', 'tools', faTools],
   dapp: ['fas', 'rocket', faRocket],
+  tokens: ['fas', 'coins', faCoins],
   'open-external': ['fas', 'external-link-alt', faExternalLinkAlt],
   close: ['fas', 'times', faTimes],
+  change: ['fas', 'exchange-alt', faExchangeAlt],
   remove: ['fas', 'times', faTimes],
   loading: ['fas', 'slash', faSlash ],
   money: ['fas', 'dollar-sign', faDollarSign],

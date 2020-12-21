@@ -41,6 +41,7 @@ const SideMenuItem = styled.div`
   ${(p: any) => p.theme.font('header')};
 
   &:hover {
+    font-size: 0.8rem;
     background-color: ${(p: any) => p.theme.menu[p.active ? 'activeItem' : 'hoverInactiveItem'].bgColor};
     color: ${(p: any) => p.theme.menu[p.active ? 'activeItem' : 'hoverInactiveItem'].textColor};
     cursor: pointer;
@@ -78,9 +79,7 @@ interface SideMenuProps {
 const ICONS: Record<string, string> = {
   OVERVIEW: 'wallet',
   SEND: 'send',
-  TRANSACTIONS: 'history',
-  DAPPS: 'dapp',
-  STAKING: 'stake',
+  TOKENS: 'tokens',
 }
 
 const SideMenu: React.FunctionComponent<SideMenuProps> = ({ 

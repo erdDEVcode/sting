@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo, useEffect, useCallback } from 'react'
 // import { ErdConnect } from 'erdbox'
 
 import { Wallet, Network, NetworkEndpoint, Signer } from '../types/all'
@@ -19,11 +19,8 @@ export interface GlobalContextValue {
   setThemeName: Function,
   network?: Network,
   switchNetwork: (endpoint: NetworkEndpoint) => void,
-  wallets: Wallet[],
   activeWallet?: Wallet,
-  setActiveWallet: Function,
-  addWallet: Function,
-  removeWallet: Function,
+  changeWallet: Function,
 }
 
 
@@ -36,7 +33,7 @@ const GlobalContext = React.createContext({} as GlobalContextValue);
   g.type = 'text/javascript'
   g.async = true
   g.defer = true
-  g.src = 'https://cdn.jsdelivr.net/npm/erdbox@1.7.0/dist/erdbox.js';
+  g.src = 'https://cdn.jsdelivr.net/npm/erdbox@1.8.0/dist/erdbox.js';
   // g.src = 'http://localhost:9000/erdbox.js'
   window.document.body.appendChild(g)
 })();
@@ -45,7 +42,7 @@ export const GlobalProvider: React.FunctionComponent = ({ children }) => {
   const [ experimentalFeaturesEnabled, setExperimentalFeaturesEnabled ] = useState(false)
   const [ themeName, setThemeName ] = useState('light')
   const { network, switchNetwork } = useNetwork()
-  const { wallets, addWallet, removeWallet, setActiveWallet, activeWallet } = useWallets()
+  const { addWallet, removeWallet, activeWallet } = useWallets()
 
   const theme = useMemo(() => {
     const r = themes.get(themeName)
@@ -53,24 +50,32 @@ export const GlobalProvider: React.FunctionComponent = ({ children }) => {
     return r
   }, [ themeName ])
 
-  useEffect(() => {
-    window.addEventListener('erdbox:ready', async () => {
-      if (window.erdbox) {
-        const connector = window.erdbox //: ErdConnect = window.elrond
+  const _loadWallet = useCallback(async () => {
+    if (window.erdbox) {
+      const connector = window.erdbox //: ErdConnect = window.elrond
 
-        try {
-          const a = await connector.getWalletAddress({ mustLoadWallet: true })
-          const s: Signer = connector.getSigner()
-          addWallet({
-            address: () => a,
-            signTransaction: s.signTransaction.bind(s),
-          })
-        } catch (err) {
-          console.error('Error fetching wallet', err)
-        }
+      try {
+        // get wallet 
+        const cachedWallet = window.localStorage.getItem('wallet')
+        const a = cachedWallet || await connector.getWalletAddress({ mustLoadWallet: true })
+        window.localStorage.setItem('wallet', a)
+
+        const s: Signer = connector.getSigner()
+
+        addWallet({
+          address: () => a,
+          signTransaction: s.signTransaction.bind(s),
+        })
+
+      } catch (err) {
+        console.error('Error fetching wallet', err)
       }
-    }, { once: true })
-  }, [addWallet])
+    }
+  }, [ addWallet ])
+
+  useEffect(() => {
+    window.addEventListener('erdbox:ready', _loadWallet, { once: true })
+  }, [_loadWallet])
 
   useEffect(() => {
     if (network?.connection && !network.failure) {
@@ -83,6 +88,17 @@ export const GlobalProvider: React.FunctionComponent = ({ children }) => {
       }
     }
   }, [ network  ])
+
+  const changeWallet = useCallback(async () => {
+    if (window.erdbox) {
+      await window.erdbox.closeWallet()
+      window.localStorage.removeItem('wallet')
+      if (activeWallet) {
+        removeWallet(activeWallet)
+      }
+      await _loadWallet()
+    }
+  }, [_loadWallet, activeWallet, removeWallet])
     
   return (
     <GlobalContext.Provider value={{
@@ -92,11 +108,8 @@ export const GlobalProvider: React.FunctionComponent = ({ children }) => {
       setThemeName,
       network,
       switchNetwork,
-      wallets,
       activeWallet,
-      setActiveWallet,
-      addWallet,
-      removeWallet,
+      changeWallet,
     }}>
       {children}
     </GlobalContext.Provider>

@@ -1,6 +1,7 @@
 exports.DASHBOARD_MENU = [
   { id: 'OVERVIEW' },
   { id: 'SEND' },
+  // { id: 'TOKENS' },
 ]
 
 exports.PROTOCOL = {
