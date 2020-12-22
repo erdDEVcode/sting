@@ -1,3 +1,10 @@
+## [2.5.1](https://github.com/erdDEVcode/sting/compare/v2.5.0...v2.5.1) (2020-12-22)
+
+
+### Bug Fixes
+
+* change wallet functionality was broken ([270157e](https://github.com/erdDEVcode/sting/commit/270157ee4cd23fb37d9cd98b63800aab10376732))
+
 # [2.5.0](https://github.com/erdDEVcode/sting/compare/v2.4.1...v2.5.0) (2020-12-22)
 
 ## [2.4.1](https://github.com/erdDEVcode/sting/compare/v2.4.0...v2.4.1) (2020-12-22)
