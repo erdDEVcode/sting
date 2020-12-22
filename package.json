@@ -29,7 +29,7 @@
     "@welldone-software/why-did-you-render": "^6.0.0-rc.1",
     "clipboard-polyfill": "^3.0.1",
     "elrond-data": "^1.3.0",
-    "elrondjs": "^1.8.0",
+    "elrondjs": "^1.11.0",
     "emotion-styled-utils": "^2.3.2",
     "emotion-theming": "^10.0.27",
     "i21n": "^1.2.0",

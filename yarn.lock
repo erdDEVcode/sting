@@ -5785,20 +5785,20 @@ elrond-data@^1.3.0:
   resolved "https://registry.yarnpkg.com/elrond-data/-/elrond-data-1.3.1.tgz#5fa51198b4c82c38eeedf6a78f48e224d004e00c"
   integrity sha512-lkcj1U/i1NwZd5436+RDPtx3Z+zQgHEvMk28GroAA4xGCPiIaRtSxkq1AMkDPHqfz0f4luyxtArzRqWqYhfl+A==
 
-elrondjs@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/elrondjs/-/elrondjs-1.4.1.tgz#ccd63020d3423607071b6c27d5128cd92ca97ba5"
-  integrity sha512-gEURUfCDuJej/iGro7DGYJmJvTJDDpDbGrYTdfnXI0mlV4l8BqCWkgipOxV672Q4E0pAeyZrAgRkw1ZoEzycQg==
+elrondjs@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/elrondjs/-/elrondjs-1.11.0.tgz#2b7f8cf7d660c2e1815d503acb383bdd1bd69b7c"
+  integrity sha512-SGzP3ZLPC2+8ezAjUYIviTzUQbXVPpDSKm/kvUdve0Ph4cv6tt4evVRQ2Fo5so4Nax5u7vqDHe+2uOfhwGtBrw==
   dependencies:
     "@elrondnetwork/elrond-core-js" "^1.28.0"
     "@elrondnetwork/hw-app-elrond" "^0.1.17"
     axios "^0.21.0"
     buffer "^6.0.2"
 
-elrondjs@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/elrondjs/-/elrondjs-1.8.0.tgz#caa298213604e95afb5c15e7887961825285e570"
-  integrity sha512-DlpHceBmqmTzaeM4iIK/dE1ft3k8ukFLbejV1FVJOZn0+KkOsis3wUjpndPAAH1/9uFB6tmih/NWznVkJzbnLg==
+elrondjs@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/elrondjs/-/elrondjs-1.4.1.tgz#ccd63020d3423607071b6c27d5128cd92ca97ba5"
+  integrity sha512-gEURUfCDuJej/iGro7DGYJmJvTJDDpDbGrYTdfnXI0mlV4l8BqCWkgipOxV672Q4E0pAeyZrAgRkw1ZoEzycQg==
   dependencies:
     "@elrondnetwork/elrond-core-js" "^1.28.0"
     "@elrondnetwork/hw-app-elrond" "^0.1.17"

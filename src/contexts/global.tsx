@@ -92,10 +92,13 @@ export const GlobalProvider: React.FunctionComponent = ({ children }) => {
   const changeWallet = useCallback(async () => {
     if (window.erdbox) {
       await window.erdbox.closeWallet()
-      await _loadWallet()
-      window.localStorage.removeItem('wallet')
-      if (activeWallet) {
-        removeWallet(activeWallet)
+      const a = await window.erdbox.getWalletAddress()
+      if (a) {        
+        if (activeWallet) {
+          removeWallet(activeWallet)
+        }
+        window.localStorage.setItem('wallet', a)
+        await _loadWallet()
       }
     }
   }, [_loadWallet, activeWallet, removeWallet])
