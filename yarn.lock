@@ -5795,15 +5795,16 @@ elrondjs@^1.11.0:
     axios "^0.21.0"
     buffer "^6.0.2"
 
-elrondjs@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/elrondjs/-/elrondjs-1.4.1.tgz#ccd63020d3423607071b6c27d5128cd92ca97ba5"
-  integrity sha512-gEURUfCDuJej/iGro7DGYJmJvTJDDpDbGrYTdfnXI0mlV4l8BqCWkgipOxV672Q4E0pAeyZrAgRkw1ZoEzycQg==
+elrondjs@^1.12.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/elrondjs/-/elrondjs-1.12.0.tgz#a3045c6386c5c9bc867e9c7d742a516cfaca35f4"
+  integrity sha512-AgCIJvnrACSiuudYxvgueFplTEBiYcDu6/lxb1sWhgm7Nr3wEOwE8zb58896RryQDLfiIZhCZ4RYwY9dsJLWCQ==
   dependencies:
     "@elrondnetwork/elrond-core-js" "^1.28.0"
     "@elrondnetwork/hw-app-elrond" "^0.1.17"
     axios "^0.21.0"
     buffer "^6.0.2"
+    keccak "^3.0.1"
 
 emittery@^0.7.1:
   version "0.7.2"
@@ -9014,6 +9015,14 @@ jssha@^2.3.1:
     array-includes "^3.1.1"
     object.assign "^4.1.1"
 
+keccak@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/keccak/-/keccak-3.0.1.tgz#ae30a0e94dbe43414f741375cff6d64c8bea0bff"
+  integrity sha512-epq90L9jlFWCW7+pQa6JOnKn2Xgl2mtI664seYR6MHskvI9agt7AnDqmAlp9TqU4/caMYbA08Hi5DMZAl5zdkA==
+  dependencies:
+    node-addon-api "^2.0.0"
+    node-gyp-build "^4.2.0"
+
 kefir@^3.7.3:
   version "3.8.7"
   resolved "https://registry.yarnpkg.com/kefir/-/kefir-3.8.7.tgz#8fa8ffa3620c6c3713838c33d92af4d976ccfce8"
@@ -10132,6 +10141,11 @@ node-abi@^2.18.0, node-abi@^2.7.0:
   dependencies:
     semver "^5.4.1"
 
+node-addon-api@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-2.0.2.tgz#432cfa82962ce494b132e9d72a15b29f71ff5d32"
+  integrity sha512-Ntyt4AIXyaLIuMHF6IOoTakB3K+RWxwtsHNRxllEoA6vPwP9o4866g6YWDLUdnucilZhmkxiHwHr11gAENw+QA==
+
 node-emoji@^1.10.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/node-emoji/-/node-emoji-1.10.0.tgz#8886abd25d9c7bb61802a658523d1f8d2a89b2da"
@@ -10157,6 +10171,11 @@ node-forge@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.10.0.tgz#32dea2afb3e9926f02ee5ce8794902691a676bf3"
   integrity sha512-PPmu8eEeG9saEUvI97fm4OYxXVB6bFvyNTyiUOBichBpFG8A1Ljw3bY62+5oOjDEMHRnd0Y7HQ+x7uzxOzC6JA==
+
+node-gyp-build@^4.2.0:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/node-gyp-build/-/node-gyp-build-4.2.3.tgz#ce6277f853835f718829efb47db20f3e4d9c4739"
+  integrity sha512-MN6ZpzmfNCRM+3t57PTJHgHyw/h4OWnZ6mR8P5j/uZtqQr46RRuDE/P+g3n0YR/AiYXeWixZZzaip77gdICfRg==
 
 node-gyp@^5.0.2, node-gyp@^5.1.0:
   version "5.1.1"
@@ -12474,17 +12493,17 @@ react-toast-notifications@^2.4.0:
     "@emotion/core" "^10.0.14"
     react-transition-group "^4.3.0"
 
-react-transaction-toasts@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-transaction-toasts/-/react-transaction-toasts-1.2.0.tgz#1964479b3df0f5712059608907c9bea2d048dd24"
-  integrity sha512-ILA9YmkAJ8ZOYrDojtlFPToSP2ZwP6LmV+EY+dak1NW0fIzmMXBmTfrvkEf036kyFm5OFCzPfM23487oGXLAjA==
+react-transaction-toasts@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/react-transaction-toasts/-/react-transaction-toasts-1.3.0.tgz#fa992f970a8e3106b94219cb705005a81d4ac39e"
+  integrity sha512-E1LotDvwe+KyfHLE/QcUSpNMpJJMwcMAIQKrkgY4lM2pRq0wb8wOgupu9XYYotuXJ7rEjVRlwAYiV6TTQHTtrw==
   dependencies:
     "@emotion/react" "^11.1.1"
     "@emotion/styled" "^11.0.0"
     "@types/node" "^12.0.0"
     "@types/react" "^16.9.53"
     "@types/react-dom" "^16.9.8"
-    elrondjs "^1.4.1"
+    elrondjs "^1.12.0"
     emotion-styled-utils "^2.3.2"
     lodash.get "^4.4.2"
     react "^17.0.1"
