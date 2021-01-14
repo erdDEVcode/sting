@@ -56,18 +56,17 @@ const DelegationQueueRow: React.FunctionComponent<Props> = ({ network, delegatio
           return
         }
 
-        const minStake = parseQueryResult(await contract.query('getMinimumStake', []), {
-          type: ContractQueryResultDataType.INT
-        })
+        const ret = await contract.query('getMinimumStake')
+        const minStake = parseQueryResult(ret, { type: ContractQueryResultDataType.INT }) as number
 
-        setMinStake(minStake as number)
-        setMinStakeDisplay(AssetValue.fromTokenAmount(network.endpoint.primaryToken!, minStake).toString({ 
+        setMinStake(minStake)
+        setMinStakeDisplay(AssetValue.fromTokenAmount(network.endpoint.primaryToken!, minStake.toString()).toString({ 
           showSymbol: true, 
           numberStyle: AssetValueNumberStyle.RAW_SCALED
         }))
       } catch (err) {
         console.error(err)
-        setLoadingError(`Error fetching staking info: ${err.message}`)
+        setLoadingError(`Error fetching queue info: ${err.message}`)
       } finally {
         setLoading(false)
       }

@@ -1,6 +1,6 @@
 import { Balance, Rate } from 'elrondjs'
 
-export * from 'elrondjs'
+export { Provider, NetworkConfig, Wallet, ContractQueryParams, SignedTransaction, Transaction, ContractQueryResult, Address, TransactionReceipt, TransactionOnChain, TokenData, Signer } from 'elrondjs'
 export * from 'elrond-data'
 export * from './network'
 

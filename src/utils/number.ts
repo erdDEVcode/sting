@@ -28,7 +28,7 @@ export class AssetValue {
   constructor(asset: Token, amount: any) {
     this._asset = asset
     this._decimalDivider = getDivider(asset)
-    this._n = new PreciseDecimal(amount)
+    this._n = new PreciseDecimal(amount.toString ? amount.toString() : amount)
   }
 
   static fromTokenAmount (token: string, amount: any) {

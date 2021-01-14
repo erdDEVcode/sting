@@ -22,7 +22,7 @@ const Modal: React.FunctionComponent<Props> = ({ width, height, className, child
 
   return (
     <ClassNames>
-      {({ css }) => (
+      {({ css }: { css: any }) => (
         <ReactModal
           className={{
             base: css`
