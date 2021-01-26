@@ -12504,10 +12504,10 @@ react-toast-notifications@^2.4.0:
     "@emotion/core" "^10.0.14"
     react-transition-group "^4.3.0"
 
-react-transaction-toasts@1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/react-transaction-toasts/-/react-transaction-toasts-1.3.4.tgz#f75b64f1ae1c881a3d981c66b8d3ce34c8939968"
-  integrity sha512-c09yJEt45LXv5R/v4R2gATQ0ZyjgdKhO5awJa7wm3abiKJgtAIEBt98rMmuT5EcPtDL8no8zwo2cmqyn41Vpxw==
+react-transaction-toasts@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-transaction-toasts/-/react-transaction-toasts-1.4.0.tgz#e4644c45904ffe15926545516b6c265e3347833f"
+  integrity sha512-Sm5I1Kti71cw7/xyrmGh68vpvBehj0rhwwwG3s0/c7qSdBtYzBNTF0kzpCXUWPZx+n+iawgEHSqq5LUwF2l7fw==
   dependencies:
     "@emotion/react" "^11.1.1"
     "@emotion/styled" "^11.0.0"

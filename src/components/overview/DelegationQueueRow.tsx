@@ -12,6 +12,10 @@ import { AssetValue, AssetValueNumberStyle } from '../../utils/number'
 
 const Container = styled.div``
 
+const DelegationButton = styled(ActionButton)`
+  margin-right: 0.5rem;
+`
+
 const MinStakeText = styled.p`
   ${(p: any) => p.theme.font('body', 'normal', 'italic')};
   color: ${(p: any) => p.theme.overview.actionBox.metaText.color};
@@ -100,15 +104,12 @@ const DelegationQueueRow: React.FunctionComponent<Props> = ({ network, delegatio
     >
       {() => (
         <Container>
-          {loading ? <LoadingIcon /> : null}
-          {loadingError ? (
-            <ErrorBox>{loadingError}</ErrorBox>
-          ) : (
-            <React.Fragment>
-              <ActionButton onClick={delegate}>Delegate to queue</ActionButton>
-              <MinStakeText>Minimum amount: {minStakeDisplay}</MinStakeText>
-            </React.Fragment>
-          )}
+          <div>
+            <DelegationButton onClick={delegate}>Delegate to queue</DelegationButton>
+            {loading ? <LoadingIcon /> : null}
+          </div>
+          <MinStakeText>Minimum amount: {minStakeDisplay}</MinStakeText>
+          {loadingError ? <ErrorBox>{loadingError}</ErrorBox> : null}
         </Container>
       )}
     </BalanceValueRow>
