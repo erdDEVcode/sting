@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react'
+import { BigVal } from 'bigval'
 import styled from '@emotion/styled'
 import { flex, boxShadow } from 'emotion-styled-utils'
 import { useTransactionToasts } from 'react-transaction-toasts'
@@ -104,7 +105,7 @@ const SideMenu: React.FunctionComponent<SideMenuProps> = ({
       const signedTransaction = await signer.signTransaction({
         sender: wallet.address(),
         receiver: '',
-        value: '0'
+        value: new BigVal(0)
       })
 
       await provider.sendSignedTransaction(signedTransaction)

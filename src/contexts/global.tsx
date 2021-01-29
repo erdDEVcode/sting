@@ -33,7 +33,7 @@ const GlobalContext = React.createContext({} as GlobalContextValue);
   g.type = 'text/javascript'
   g.async = true
   g.defer = true
-  g.src = 'https://cdn.jsdelivr.net/npm/erdbox@1.11.0/dist/erdbox.js';
+  g.src = 'https://cdn.jsdelivr.net/npm/erdbox@1.12.0/dist/erdbox.js';
   // g.src = 'http://localhost:9000/erdbox.js'
   window.document.body.appendChild(g)
 })();
