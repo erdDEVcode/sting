@@ -30,7 +30,7 @@ const ClaimDelegationRewardsRow: React.FunctionComponent<Props> = ({ network, de
 
     try {
       await c.invoke('claimRewards', [], {
-        gasLimit: 250000000,
+        gasLimit: 50000000,
         meta: {
           displayOptions: {
             excludeAmount: true,
