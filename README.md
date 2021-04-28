@@ -1,15 +1,9 @@
-<p align="center">
-  <img width="250" height="250" src="https://raw.githubusercontent.com/erdDEVcode/sting/master/assets/logo.png">
-</p>
-
-# Sting
+# DEPRECATED - Sting is now deprecated and no longer maintained. Please use the [official Elrond wallet](https://wallet.elrond.com) instead.
 
 [![Join the community](https://img.shields.io/badge/Chat%20on-Telegram-brightgreen.svg?color=0088cc)](https://t.me/erdDEV)
 [![Follow on Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Follow&maxAge=2592000)](https://twitter.com/erd_dev)
 
 Cross-browser web wallet for the [Elrond](https://elrond.com) blockchain.
-
-Use it at: https://sting.erd.dev
 
 Features:
 * Unified balance view (staking/delegation + wallet).
